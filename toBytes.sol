@@ -51,9 +51,14 @@ contract sample {
         }
     } // 577 gas
 
+
     function shl1(uint256 _arg) pure public returns (uint x) {
+
         x=_arg*32;
+
     } //819 gas We have IsZero check here
+
+
 
     function calldataload (bytes calldata _bytes, uint256 _arg) pure public returns (uint x) {
          assembly {
