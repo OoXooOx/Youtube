@@ -49,7 +49,11 @@ contract sample {
             //So, shl(5, _arg) means that you are taking the binary representation of _arg and shifting its bits 5 positions to the left, effectively multiplying it by 2^5
             // shifting it left by 5 positions results in 11000000, which is 192 in decimal. So, in this case, it is indeed equivalent to _arg * 32.
         }
-    }
+    } // 577 gas
+
+    function shl1(uint256 _arg) pure public returns (uint x) {
+        x=_arg*32;
+    } //819 gas We have IsZero check here
 
     function calldataload (bytes calldata _bytes, uint256 _arg) pure public returns (uint x) {
          assembly {
