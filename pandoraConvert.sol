@@ -40,10 +40,7 @@ contract pandoraConvert {
             require(success1 && (response1.length == 0 || abi.decode(response1, (bool))), "Failed send funds");
             unchecked{minted++;}
             if(minted == nearestRedId) break;
-        }
-        
-    }
-        
+        }    
     }
 
     function findRedId(uint256 id) public pure returns (uint nearestRedId) {
