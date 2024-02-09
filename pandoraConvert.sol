@@ -24,7 +24,7 @@ contract pandoraConvert {
                 1 ether)
             );
             require(success && (response.length == 0 || abi.decode(response, (bool))), "Failed send funds");
-            minted++;
+            unchecked{minted++;}
             if(minted == nearestRedId) {
                 pandora.safeTransferFrom(address(this),msg.sender, minted); 
                 return;
@@ -38,9 +38,11 @@ contract pandoraConvert {
                 1 ether)
             );
             require(success1 && (response1.length == 0 || abi.decode(response1, (bool))), "Failed send funds");
-            minted++;
+            unchecked{minted++;}
             if(minted == nearestRedId) break;
         }
+        
+    }
         
     }
 
